@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import pt.hventura.shoestore.databinding.FragmentLoginBinding
 
 class LoginFragment : Fragment() {
@@ -14,7 +15,17 @@ class LoginFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         val binding = DataBindingUtil.inflate<FragmentLoginBinding>(inflater, R.layout.fragment_login, container, false)
+
+        binding.loginButton.setOnClickListener {
+            this.findNavController().navigate(LoginFragmentDirections.actionLoginFragmentToWelcomeFragment())
+        }
+
+        binding.registerButton.setOnClickListener {
+            this.findNavController().navigate(LoginFragmentDirections.actionLoginFragmentToWelcomeFragment())
+        }
+
         return binding.root
     }
+
 
 }
