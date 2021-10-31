@@ -22,7 +22,7 @@ class ShoeListFragment : Fragment() {
         val viewModel: ShoeViewModel by activityViewModels()
 
         binding.shoeDetails.setOnClickListener {
-            this.findNavController().navigate(ShoeListFragmentDirections.actionShoesFragmentToShoeDetailFragment())
+            findNavController().navigate(ShoeListFragmentDirections.actionShoesFragmentToShoeDetailFragment())
         }
 
         viewModel.shoeList.observe(this, { shoeList ->

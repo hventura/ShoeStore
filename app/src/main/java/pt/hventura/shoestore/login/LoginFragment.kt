@@ -18,11 +18,11 @@ class LoginFragment : Fragment() {
         val binding = DataBindingUtil.inflate<FragmentLoginBinding>(inflater, R.layout.fragment_login, container, false)
 
         binding.loginButton.setOnClickListener {
-            this.findNavController().navigate(LoginFragmentDirections.actionLoginFragmentToWelcomeFragment())
+            findNavController().navigate(LoginFragmentDirections.actionLoginFragmentToWelcomeFragment())
         }
 
         binding.registerButton.setOnClickListener {
-            this.findNavController().navigate(LoginFragmentDirections.actionLoginFragmentToWelcomeFragment())
+            findNavController().navigate(LoginFragmentDirections.actionLoginFragmentToWelcomeFragment())
         }
 
         return binding.root

@@ -10,6 +10,7 @@
             type="pt.hventura.shoestore.shoelist.ShoeViewModel" />
     </data>
 
+    <!-- ConstraintLayout here is to help maintain the items align in all screens -->
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"

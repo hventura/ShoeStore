@@ -35,22 +35,32 @@ class MainActivity : AppCompatActivity() {
         AppBarConfiguration(navController.graph, drawerLayout)
 
         navController.addOnDestinationChangedListener { controller, destination, _ ->
-            if (destination.id == controller.graph.startDestination) {
-                // Is it necessary to check if it's null?
-                if (supportActionBar != null) {
-                    supportActionBar!!.hide()
-                }
-                drawerLayout.setDrawerLockMode(DrawerLayout.LOCK_MODE_LOCKED_CLOSED)
-            } else {
+            if (destination.id == R.id.shoeListFragment) {
+                drawerLayout.setDrawerLockMode(DrawerLayout.LOCK_MODE_UNLOCKED)
                 if (supportActionBar != null) {
                     supportActionBar!!.show()
                 }
+
+            } else {
+                if (destination.id == controller.graph.startDestination) {
+                    // Is it necessary to check if it's null?
+                    if (supportActionBar != null) {
+                        supportActionBar!!.hide()
+                    }
+                } else {
+                    if (supportActionBar != null) {
+                        supportActionBar!!.show()
+                    }
+
+                }
+
                 if (destination.id == R.id.welcomeFragment) {
                     if (supportActionBar != null) {
                         supportActionBar!!.setDisplayHomeAsUpEnabled(false)
                     }
                 }
-                drawerLayout.setDrawerLockMode(DrawerLayout.LOCK_MODE_UNLOCKED)
+
+                drawerLayout.setDrawerLockMode(DrawerLayout.LOCK_MODE_LOCKED_CLOSED)
             }
         }
 

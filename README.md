@@ -15,6 +15,9 @@ I used the starting project as a guidemap but created a new project to keep the 
 Anyone is free to see the project.  
 With that in mind and if you are going through the course see what i've done, but please, do not copy, try understand it as i did!
 
+There is a drawer menu that i use instead of the 'logout menu' but as the criteria states it is only available in the shoe list fragment!
+It is easy to make it available in more fragments.
+
 The picture in the logo is free and i took it from here:
 clipartkey.com/view/iobmxR_running-shoes-clipart-shoe-print-clip-art/
 The font is Ubunut from Google fonts and it's free as well :)
