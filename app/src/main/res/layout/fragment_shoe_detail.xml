@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="shoeViewModel"
+            type="pt.hventura.shoestore.shoelist.ShoeViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/primaryDarkColor"
+        android:padding="20dp"
+        tools:context=".shoelist.ShoeDetailFragment">
+
+        <TextView
+            android:id="@+id/shoedetail_text"
+            style="@style/customTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/shoedetail_text"
+            android:textAlignment="center"
+            app:layout_constraintBottom_toTopOf="@id/shoedetail_subtext"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/shoedetail_subtext"
+            style="@style/customInputText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:fontFamily="@font/ubuntu_italic"
+            android:text="@string/shoedetail_subtext"
+            android:textAlignment="textStart"
+            app:layout_constraintBottom_toTopOf="@id/shoe_company_layout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/shoedetail_text" />
+
+        <!-- SHOE COMPANY -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/shoe_company_layout"
+            style="@style/customTextInputLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/shoe_company_layout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/shoedetail_subtext">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/shoe_company_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:text="@={shoeViewModel.shoe.company}" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- SHOE NAME -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/shoe_name_layout"
+            style="@style/customTextInputLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/shoe_name_layout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/shoe_company_layout">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/shoe_name_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:text="@={shoeViewModel.shoe.name}" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- SHOE SIZE -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/shoe_size_layout"
+            style="@style/customTextInputLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/shoe_size_layout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/shoe_name_layout">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/shoe_size_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="numberDecimal"
+                android:text="@={shoeViewModel.shoe.size}" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- SHOE DESCRIPTION -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/shoe_description_layout"
+            style="@style/customTextInputLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/shoe_description_layout"
+            app:counterEnabled="true"
+            app:counterMaxLength="250"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/shoe_size_layout">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/shoe_description_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textMultiLine"
+                android:text="@={shoeViewModel.shoe.description}" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <Button
+            android:id="@+id/saveButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:layout_marginEnd="10dp"
+            android:background="@drawable/custom_button"
+            android:fontFamily="@font/ubuntu_bold"
+            android:onClick="@{() -> shoeViewModel.saveShoe()}"
+            android:text="@string/save"
+            android:textColor="@color/white"
+            android:textSize="15sp"
+            app:layout_constraintEnd_toStartOf="@id/cancelButton"
+            app:layout_constraintHorizontal_chainStyle="spread"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/shoe_description_layout" />
+
+        <Button
+            android:id="@+id/cancelButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:background="@drawable/custom_button"
+            android:fontFamily="@font/ubuntu_bold"
+            android:text="@string/cancel"
+            android:textColor="@color/white"
+            android:textSize="15sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/saveButton"
+            app:layout_constraintTop_toTopOf="@+id/saveButton" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

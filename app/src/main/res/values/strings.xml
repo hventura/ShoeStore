@@ -12,8 +12,36 @@
     <string name="logo_description">Shoe Store Logo</string>
     <string name="authentication">Authentication</string>
     <string name="login">Login</string>
+    <string name="save">Save</string>
+    <string name="cancel">Cancel</string>
     <string name="register_now">Register Now</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="welcome_tex">Welcome to Show Store</string>
+    <string name="welcome_sub_tex">&quot;Good Shoes Take You To Good Places&quot;</string>
+    <string name="instructions">Instructions</string>
+    <string name="instructions_text">This application was built in the context of the Android Kotlin Developer Nanodegree - Udacity\n\n
+        The application has a side menu that can be access by swiping your finger from left edge to right of your phone. From there
+        you can navigate to anywhere in the App.\nIn the Show List (that can be access through the menu or the bottom button of this screen!) you are able to see
+        a list of shoes saved in the system [with the details of that product\'s Name, Company, Size and little description]
+        and a button to the Details where you can add and save a new Shoe <i>(NOTE: For now when you close the app all information is deleted)</i>\n
+        Hope you enjoy!</string>
+    <string name="button_shoe_list">Go to Shoe List</string>
+
+    <string name="shoelist_title">Shoe List</string>
+    <string name="shoe_details_description">Shoe Details</string>
+
+    <string name="shoedetail_title">Shoe Detail</string>
+    <string name="shoedetail_text">Details of shoe</string>
+    <string name="shoedetail_subtext">*Fill the fields and save the item to appear in the Shoe List</string>
+    <string name="shoe_name_layout">Name</string>
+    <string name="shoe_size_layout">Size (Ex: 41.5)</string>
+    <string name="shoe_company_layout">Company</string>
+    <string name="shoe_description_layout">Description</string>
+
+    <string name="shoe_name">Name: </string>
+    <string name="shoe_size">Size: </string>
+    <string name="shoe_company">Company: </string>
+    <string name="shoe_description">Description: </string>
+    <string name="list_description">Content of the shoe list</string>
+    <string name="no_content">No Content to show. Please add some items!</string>
 
 </resources>

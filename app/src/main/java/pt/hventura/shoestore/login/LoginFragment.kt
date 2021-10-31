@@ -1,4 +1,4 @@
-package pt.hventura.shoestore
+package pt.hventura.shoestore.login
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
+import pt.hventura.shoestore.R
 import pt.hventura.shoestore.databinding.FragmentLoginBinding
 
 class LoginFragment : Fragment() {
@@ -26,6 +27,4 @@ class LoginFragment : Fragment() {
 
         return binding.root
     }
-
-
 }

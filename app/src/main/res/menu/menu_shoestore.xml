@@ -2,10 +2,6 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:id="@+id/loginFragment"
-        android:icon="@drawable/ic_default_user"
-        android:title="@string/title_login" />
-    <item
         android:id="@+id/welcomeFragment"
         android:icon="@drawable/ic_welcome"
         android:title="@string/title_welcome" />
@@ -14,11 +10,11 @@
         android:icon="@drawable/ic_instructions"
         android:title="@string/title_instructions" />
     <item
-        android:id="@+id/menu_shoelist"
+        android:id="@+id/shoeListFragment"
         android:icon="@drawable/ic_shoe_list"
         android:title="@string/title_shoes_list" />
     <item
-        android:id="@+id/menu_logout"
+        android:id="@+id/loginFragment"
         android:icon="@drawable/ic_logout"
         android:title="@string/title_logout" />
 </menu>

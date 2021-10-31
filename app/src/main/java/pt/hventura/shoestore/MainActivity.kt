@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.navigation.findNavController
+import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.NavigationUI
 import pt.hventura.shoestore.databinding.ActivityMainBinding
 import timber.log.Timber
@@ -20,6 +21,7 @@ class MainActivity : AppCompatActivity() {
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
         Timber.plant(Timber.DebugTree())
 
+        // Todo: How to accomplish this avoiding the Deprecation?
         window.setFlags(
             WindowManager.LayoutParams.FLAG_FULLSCREEN,
             WindowManager.LayoutParams.FLAG_FULLSCREEN
@@ -29,12 +31,25 @@ class MainActivity : AppCompatActivity() {
         val navController = this.findNavController(R.id.navHostFragment)
         NavigationUI.setupActionBarWithNavController(this, navController)
         NavigationUI.setupWithNavController(binding.navView, navController)
+
+        AppBarConfiguration(navController.graph, drawerLayout)
+
         navController.addOnDestinationChangedListener { controller, destination, _ ->
             if (destination.id == controller.graph.startDestination) {
-                supportActionBar!!.hide()
+                // Is it necessary to check if it's null?
+                if (supportActionBar != null) {
+                    supportActionBar!!.hide()
+                }
                 drawerLayout.setDrawerLockMode(DrawerLayout.LOCK_MODE_LOCKED_CLOSED)
             } else {
-                supportActionBar!!.show()
+                if (supportActionBar != null) {
+                    supportActionBar!!.show()
+                }
+                if (destination.id == R.id.welcomeFragment) {
+                    if (supportActionBar != null) {
+                        supportActionBar!!.setDisplayHomeAsUpEnabled(false)
+                    }
+                }
                 drawerLayout.setDrawerLockMode(DrawerLayout.LOCK_MODE_UNLOCKED)
             }
         }
